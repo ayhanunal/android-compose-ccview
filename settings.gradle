@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "AndroidComposeCCView"
 include ':app'
 include ':ccview'
+include ':core'
