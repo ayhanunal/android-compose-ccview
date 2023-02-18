@@ -17,7 +17,10 @@ object Spacing {
     val size_20 = 20.dp
     val size_25 = 25.dp
     val size_30 = 30.dp
+    val size_32 = 32.dp
     val size_40 = 40.dp
+    val size_48 = 48.dp
+    val size_60 = 60.dp
 }
 
 object TextSpacing {

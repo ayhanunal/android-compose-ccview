@@ -6,4 +6,5 @@ object BaseComposeColor {
     val white = Color(0xFFFFFFFF)
     val white_60 = Color(0x60FFFFFF)
     val black = Color(0xFF0E0E0E)
+    val main_card_bg = Color(0xFFD5C32C)
 }
