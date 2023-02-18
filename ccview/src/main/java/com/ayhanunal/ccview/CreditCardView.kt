@@ -30,8 +30,10 @@ import com.ayhanunal.core.base.theme.Spacing
 @Composable
 fun CreditCardView(
     modifier: Modifier = Modifier,
-    data: CreditCardData
+    data: CreditCardData,
+    cardVerification: (isValid: Boolean) -> Unit
 ) {
+    cardVerification.invoke(!data.isInvalidCard)
     Card(
         modifier = modifier
             .fillMaxWidth(),
@@ -158,12 +160,12 @@ private fun CreditCardPreview() {
             .padding(Spacing.size_16)
             .fillMaxSize()
     ) {
-        CreditCardView(data = visaWithNFC)
+        CreditCardView(data = visaWithNFC) {}
         Spacer(modifier = Modifier.height(Spacing.size_16))
-        CreditCardView(data = visaWithoutNFC)
+        CreditCardView(data = visaWithoutNFC) {}
         Spacer(modifier = Modifier.height(Spacing.size_16))
-        CreditCardView(data = masterCardWithNFC)
+        CreditCardView(data = masterCardWithNFC) {}
         Spacer(modifier = Modifier.height(Spacing.size_16))
-        CreditCardView(data = invalidCard)
+        CreditCardView(data = invalidCard) {}
     }
 }
