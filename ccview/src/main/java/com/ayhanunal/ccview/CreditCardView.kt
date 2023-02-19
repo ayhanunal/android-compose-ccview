@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Card
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme.typography
@@ -29,19 +30,24 @@ import com.ayhanunal.core.base.theme.Spacing
 
 @Composable
 fun CreditCardView(
-    modifier: Modifier = Modifier,
+    modifier: Modifier = Modifier
+        .padding(horizontal = Spacing.size_16)
+        .padding(top = Spacing.size_16)
+        .fillMaxWidth()
+        .wrapContentSize(),
     data: CreditCardData,
     cardVerification: (isValid: Boolean) -> Unit
 ) {
     cardVerification.invoke(!data.isInvalidCard)
-    Card(
-        modifier = modifier
-            .fillMaxWidth(),
-        shape = Shapes.medium,
-        contentColor = BaseComposeColor.main_card_bg,
-        elevation = Spacing.size_4
-    ) {
-        CardContentView(data = data)
+    Column {
+        Card(
+            modifier = modifier,
+            shape = Shapes.medium,
+            contentColor = BaseComposeColor.main_card_bg,
+            elevation = Spacing.size_4
+        ) {
+            CardContentView(data = data)
+        }
     }
 }
 
