@@ -20,6 +20,22 @@ Screenshots
   <img src='https://github.com/ayhanunal/android-compose-ccview/blob/main/art/art1.png' width=300 heihgt=300> 
 </p>
 
+Getting started
+-----------
+In your project's build.gradle
+
+```gradle
+repositories {
+    maven { url "https://jitpack.io" }
+}
+```
+
+In your modules's build.gradle
+
+```gradle
+implementation 'com.github.ayhanunal:android-compose-ccview:$latest_version'
+```
+
 Usage
 -----------
 <p>
